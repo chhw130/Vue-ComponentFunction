@@ -2,10 +2,13 @@
   <h2>Manage Goals</h2>
   <input type="text" ref="goal" />
   <button @click="setGoal">Set goal</button>
-  <ErrorAlertModal v-if="inputIsInvalid">
-    <h2>Input is invalid</h2>
-    <p>Please enter at least a few charactars...</p>
-  </ErrorAlertModal>
+  <teleport to="body">
+    <ErrorAlertModal v-if="inputIsInvalid">
+      <h2>Input is invalid</h2>
+      <p>Please enter at least a few charactars...</p>
+      <button @click="confirmError">OK</button>
+    </ErrorAlertModal>
+  </teleport>
 </template>
 
 <script>
@@ -29,6 +32,9 @@ export default {
 
         console.log(this.inputIsInvalid);
       }
+    },
+    confirmError() {
+      this.inputIsInvalid = false;
     },
   },
 };
