@@ -54,6 +54,7 @@ export default {
   methods: {
     setSeletecComponent(cmp) {
       this.seletedComponent = cmp;
+
     },
   },
 };
