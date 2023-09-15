@@ -1,7 +1,10 @@
 <template>
   <div>
-    <header>
-      <slot name="header"></slot>
+    <!-- 조건부에 따라 header태그 삭제 -->
+    <header v-if="$slots.header">
+      <slot name="header">
+        <p>weqf</p>
+      </slot>
     </header>
     <slot></slot>
   </div>
