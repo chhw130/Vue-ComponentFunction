@@ -15,8 +15,11 @@
     </CourseGoal> -->
     <button @click="setSeletecComponent('ActiveGoals')">Active Goals</button>
     <button @click="setSeletecComponent('ManageGoals')">Manage Goals</button>
-    <ManageGoals v-if="seletedComponent === 'ManageGoals'" />
-    <ActiveGoals v-if="seletedComponent === 'ActiveGoals'" />
+    <!-- <ManageGoals v-if="seletedComponent === 'ManageGoals'" />
+    <ActiveGoals v-if="seletedComponent === 'ActiveGoals'" /> -->
+    <KeepAlive>
+      <component :is="seletedComponent"></component>
+    </KeepAlive>
   </div>
 </template>
 
@@ -44,15 +47,13 @@ export default {
         description: "Site owner and admin",
         role: "admin",
       },
-      seletedComponent: ManageGoals,
+      seletedComponent: "ManageGoals",
     };
   },
 
   methods: {
     setSeletecComponent(cmp) {
       this.seletedComponent = cmp;
-
-      console.log(this.seletedComponent);
     },
   },
 };
