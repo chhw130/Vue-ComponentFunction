@@ -52,7 +52,7 @@ export default {
     setSeletecComponent(cmp) {
       this.seletedComponent = cmp;
 
-      console.log(this.seletedComponent);
+      console.log(this.seletedComponent1233123);
     },
   },
 };
