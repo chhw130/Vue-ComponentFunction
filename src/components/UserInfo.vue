@@ -18,10 +18,4 @@ export default {
 };
 </script>
 
-<style scoped>
-section header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
+<style scoped></style>
