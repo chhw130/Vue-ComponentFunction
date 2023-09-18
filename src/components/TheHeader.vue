@@ -1,8 +1,24 @@
 <template>
-  <header>
+  <header @click="headerHandler">
     <h1>More on Vue Components</h1>
   </header>
 </template>
+
+<script>
+import { useProductStore } from "../store/ProductStore";
+
+export default {
+  methods: {
+    headerHandler() {
+      const store = useProductStore();
+
+      console.log(1, store.$state);
+      store.$patch({ id: 2, name: "Hyun" });
+      console.log(2, store.$state);
+    },
+  },
+};
+</script>
 
 <style scoped>
 header {
